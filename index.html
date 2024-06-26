@@ -7,10 +7,15 @@
   </head>
   <body>
     <script>
-      // Null and undefined
-      let x = 10;
-      let y = null;
-      document.write(x * y);
+      // Closure / Lexical scoping
+      const parent = (y) => {
+        let x = 10;
+        const child = () => {
+          console.log(x + y);
+        };
+        child();
+      };
+      parent(10);
     </script>
   </body>
 </html>
