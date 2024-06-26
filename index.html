@@ -7,15 +7,17 @@
   </head>
   <body>
     <script>
-      // Closure / Lexical scoping
-      const parent = (y) => {
-        let x = 10;
-        const child = () => {
-          console.log(x + y);
-        };
-        child();
+      // Hoisting in js
+      // x = 10;
+      // console.log(x);
+      // var x;
+      sum(5, 89);
+
+      const sum = (a, b) => {
+        document.write(a + b);
       };
-      parent(10);
+
+      //  not work with arrow function and curly bracket
     </script>
   </body>
 </html>
