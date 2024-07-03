@@ -1,42 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <style>
-      #body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-      #parentClick {
-        height: 200px;
-        width: 200px;
-        background-color: aqua;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-    </style>
+    <style></style>
   </head>
   <body>
-    <div id="parentClick">
-      <button id="childClick">click me</button>
-    </div>
     <script>
-      // event capturing
-      const parentId = document.getElementById("parentClick");
-      const childId = document.getElementById("childClick");
+      // Callback Function
 
-      const parentClick = () => {
-        alert("parent click");
+      const firstFun = (Callback) => {
+        setTimeout(() => {
+          console.log("first");
+          Callback();
+        }, 2000);
       };
-
-      const childClick = (event) => {
-        alert("child click");
+      const secondFun = () => {
+        console.log("second");
       };
-
-      parentId.addEventListener("click", parentClick, true);
-      childId.addEventListener("click", childClick, true);
+      firstFun(secondFun);
     </script>
   </body>
 </html>
