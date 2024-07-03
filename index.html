@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <style>
+      #body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      #parentClick {
+        height: 200px;
+        width: 200px;
+        background-color: aqua;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
   </head>
   <body>
+    <div id="parentClick" onclick="parentClick()">
+      <button id="childClick" onclick="childClick()">click me</button>
+    </div>
     <script>
-      // Hoisting in js
-      // x = 10;
-      // console.log(x);
-      // var x;
-      sum(5, 89);
-
-      const sum = (a, b) => {
-        document.write(a + b);
+      // event bubling
+      const parentClick = () => {
+        alert("parentclick");
       };
-
-      //  not work with arrow function and curly bracket
+      const childClick = () => {
+        alert("childclick");
+        event.stopPropagation();
+      };
     </script>
   </body>
 </html>
