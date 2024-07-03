@@ -5,18 +5,15 @@
   </head>
   <body>
     <script>
-      // Callback Function
-
-      const firstFun = (Callback) => {
-        setTimeout(() => {
-          console.log("first");
-          Callback();
-        }, 2000);
-      };
-      const secondFun = () => {
-        console.log("second");
-      };
-      firstFun(secondFun);
+      // set timeout and setinterval
+      const timed = setTimeout(() => {
+        console.log("timeout");
+      }, 6000);
+      clearTimeout(timed);
+      const inter = setInterval(() => {
+        console.log("interval");
+      }, 2000);
+      clearInterval(inter);
     </script>
   </body>
 </html>
