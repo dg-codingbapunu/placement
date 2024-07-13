@@ -5,15 +5,19 @@
   </head>
   <body>
     <script>
-      // set timeout and setinterval
-      const timed = setTimeout(() => {
-        console.log("timeout");
-      }, 6000);
-      clearTimeout(timed);
-      const inter = setInterval(() => {
-        console.log("interval");
-      }, 2000);
-      clearInterval(inter);
+      // Promises in js
+      let promise = new Promise(function (resolve, reject) {
+        var condition = false;
+        if (condition == false) {
+          resolve("this is fullfilled");
+        } else {
+          reject("this is rejected");
+        }
+      });
+      // console.log(promise);
+      promise.then((res) => {
+        console.log(res);
+      });
     </script>
   </body>
 </html>
