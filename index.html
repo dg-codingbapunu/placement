@@ -5,19 +5,15 @@
   </head>
   <body>
     <script>
-      // Promises in js
-      let promise = new Promise(function (resolve, reject) {
-        var condition = false;
-        if (condition == false) {
-          resolve("this is fullfilled");
-        } else {
-          reject("this is rejected");
-        }
-      });
-      // console.log(promise);
-      promise.then((res) => {
-        console.log(res);
-      });
+      //  async and await
+      async function myFunction() {
+        let apiCall = fetch("https://fakestoreapi.com/products/1");
+        apiCall = await apiCall;
+        apiCall = await apiCall.json();
+
+        console.log(apiCall);
+      }
+      myFunction();
     </script>
   </body>
 </html>
