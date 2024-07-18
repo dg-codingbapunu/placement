@@ -5,15 +5,18 @@
   </head>
   <body>
     <script>
-      //  async and await
-      async function myFunction() {
-        let apiCall = fetch("https://fakestoreapi.com/products/1");
-        apiCall = await apiCall;
-        apiCall = await apiCall.json();
-
-        console.log(apiCall);
+      // sychronous And asynchronous
+      function one() {
+        console.log("1");
       }
-      myFunction();
+      function two() {
+        console.log("2");
+      }
+      setTimeout(() => {
+        one();
+      }, 2000);
+
+      two();
     </script>
   </body>
 </html>
